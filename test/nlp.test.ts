@@ -123,7 +123,7 @@ describe('NLP', () => {
     const dateFormatter: DateFormatter = (year, month, day) =>
       `${day}. ${month}, ${year}`
 
-    expect(rrule.toText(undefined, undefined, dateFormatter)).to.equal(
+    expect(rrule.toText(undefined, dateFormatter)).to.equal(
       'every week until 10. November, 2012'
     )
   })

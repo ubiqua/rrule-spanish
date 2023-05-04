@@ -1,4 +1,4 @@
-import ToText, { DateFormatter, GetText } from './totext'
+import ToText, { DateFormatter } from './totext'
 import parseText from './parsetext'
 import { RRule } from '../rrule'
 import { Frequency } from '../types'
@@ -122,11 +122,10 @@ ToText.IMPLEMENTED[Frequency.YEARLY] = ['byweekno', 'byyearday'].concat(common)
 
 const toText = function (
   rrule: RRule,
-  gettext?: GetText,
   language?: Language,
   dateFormatter?: DateFormatter
 ) {
-  return new ToText(rrule, gettext, language, dateFormatter).toString()
+  return new ToText(rrule, language, dateFormatter).toString()
 }
 
 const { isFullyConvertible } = ToText

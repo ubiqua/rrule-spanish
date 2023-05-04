@@ -4,7 +4,7 @@ import IterResult, { IterArgs } from './iterresult'
 import CallbackIterResult from './callbackiterresult'
 import { Language } from './nlp/i18n'
 import { fromText, parseText, toText, isFullyConvertible } from './nlp/index'
-import { DateFormatter, GetText } from './nlp/totext'
+import { DateFormatter } from './nlp/totext'
 import {
   ParsedOptions,
   Options,
@@ -259,12 +259,8 @@ export class RRule implements QueryMethods {
    * Will convert all rules described in nlp:ToText
    * to text.
    */
-  toText(
-    gettext?: GetText,
-    language?: Language,
-    dateFormatter?: DateFormatter
-  ) {
-    return toText(this, gettext, language, dateFormatter)
+  toText(language?: Language, dateFormatter?: DateFormatter) {
+    return toText(this, language, dateFormatter)
   }
 
   isFullyConvertibleToText() {

@@ -43,7 +43,7 @@ export default class ToText {
   static IMPLEMENTED: string[][]
   private rrule: RRule
   private text: string[]
-  private gettext: GetText
+  private getText: GetText
   private dateFormatter: DateFormatter
   private language: Language
   private options: Partial<Options>
@@ -58,13 +58,12 @@ export default class ToText {
 
   constructor(
     rrule: RRule,
-    gettext: GetText = defaultGetText,
     language: Language = ENGLISH,
     dateFormatter: DateFormatter = defaultDateFormatter
   ) {
     this.text = []
     this.language = language || ENGLISH
-    this.gettext = gettext
+    this.getText = language.getText || defaultGetText
     this.dateFormatter = dateFormatter
     this.rrule = rrule
     this.options = rrule.options
@@ -158,7 +157,7 @@ export default class ToText {
    * @return {*}
    */
   toString() {
-    const gettext = this.gettext
+    const gettext = this.getText
 
     if (!(this.options.freq in ToText.IMPLEMENTED)) {
       return gettext('RRule error: Unable to fully convert this rrule to text')
@@ -193,7 +192,7 @@ export default class ToText {
   }
 
   HOURLY() {
-    const gettext = this.gettext
+    const gettext = this.getText
 
     if (this.options.interval !== 1) this.add(this.options.interval.toString())
 
@@ -203,7 +202,7 @@ export default class ToText {
   }
 
   MINUTELY() {
-    const gettext = this.gettext
+    const gettext = this.getText
 
     if (this.options.interval !== 1) this.add(this.options.interval.toString())
 
@@ -215,7 +214,7 @@ export default class ToText {
   }
 
   DAILY() {
-    const gettext = this.gettext
+    const gettext = this.getText
 
     if (this.options.interval !== 1) this.add(this.options.interval.toString())
 
@@ -246,7 +245,7 @@ export default class ToText {
   }
 
   WEEKLY() {
-    const gettext = this.gettext
+    const gettext = this.getText
 
     if (this.options.interval !== 1) {
       this.add(this.options.interval.toString()).add(
@@ -285,7 +284,7 @@ export default class ToText {
   }
 
   MONTHLY() {
-    const gettext = this.gettext
+    const gettext = this.getText
 
     if (this.origOptions.bymonth) {
       if (this.options.interval !== 1) {
@@ -315,7 +314,7 @@ export default class ToText {
   }
 
   YEARLY() {
-    const gettext = this.gettext
+    const gettext = this.getText
 
     if (this.origOptions.bymonth) {
       if (this.options.interval !== 1) {
@@ -358,7 +357,7 @@ export default class ToText {
   }
 
   private _bymonthday() {
-    const gettext = this.gettext
+    const gettext = this.getText
     if (this.byweekday && this.byweekday.allWeeks) {
       this.add(gettext('on'))
         .add(
@@ -375,7 +374,7 @@ export default class ToText {
   }
 
   private _byweekday() {
-    const gettext = this.gettext
+    const gettext = this.getText
     if (this.byweekday.allWeeks && !this.byweekday.isWeekdays) {
       this.add(gettext('on')).add(
         this.list(this.byweekday.allWeeks, this.weekdaytext)
@@ -392,7 +391,7 @@ export default class ToText {
   }
 
   private _byhour() {
-    const gettext = this.gettext
+    const gettext = this.getText
 
     this.add(gettext('at')).add(
       this.list(this.origOptions.byhour, undefined, gettext('and'))
@@ -401,14 +400,14 @@ export default class ToText {
 
   private _bymonth() {
     this.add(
-      this.list(this.options.bymonth, this.monthtext, this.gettext('and'))
+      this.list(this.options.bymonth, this.monthtext, this.getText('and'))
     )
   }
 
   nth(n: number | string) {
     n = parseInt(n.toString(), 10)
     let nth: string
-    const gettext = this.gettext
+    const gettext = this.getText
 
     if (n === -1) return gettext('last')
 
@@ -500,5 +499,10 @@ export default class ToText {
     } else {
       return arr.map(realCallback).join(delim + ' ')
     }
+  }
+
+  replaceLastComma(s: string) {
+    s = s.replace(/,([^,]*)$/, this.getText('and') + ' $1')
+    return s
   }
 }

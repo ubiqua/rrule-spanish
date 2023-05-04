@@ -2,11 +2,17 @@
 // i18n
 // =============================================================================
 
+import { GetText } from './totext'
+
 export interface Language {
   dayNames: string[]
   monthNames: string[]
   tokens: {
     [k: string]: RegExp
+  }
+  getText?: GetText
+  dictionary?: {
+    [k: string]: string
   }
 }
 
