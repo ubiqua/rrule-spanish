@@ -19,13 +19,16 @@ to natural language.
 
 ---
 
-### * Spanish support
+### \* Spanish support
+
 This project doesn't support internationalization at all, so I had to implement `spanish` in a hacky way.
 
 **EXAMPLES:** Check [test/npl.es.test.ts](test/nlp.es.test.ts) for spanish examples.
+
 - API have small change: `getText()` doesn't need `gettext` param anymore.
 - `gettext` implemented in the `Language` object.
 - Add `dictionary` property in the `Language` type.
+
 ### Quick Start
 
 - [Demo app](http://jakubroztocil.github.io/rrule/)

@@ -45,12 +45,6 @@ describe('NLP - es la', () => {
     texts.forEach(function (item) {
       const text = item[0]
       const str = item[1]
-
-      if (str == 'RRULE:FREQ=YEARLY;BYDAY=+1FR') {
-        console.log('str', str)
-        console.log('text', text)
-      }
-
       expect(RRule.fromString(str).toText(SPANISH).toLowerCase()).equals(
         text.toLowerCase(),
         str + ' => ' + text
