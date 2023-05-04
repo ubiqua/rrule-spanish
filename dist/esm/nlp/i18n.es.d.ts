@@ -1,4 +1,3 @@
 import { Language } from './i18n';
-declare const SPANISH: Language;
-export default SPANISH;
+export declare const SPANISH: Language;
 //# sourceMappingURL=i18n.es.d.ts.map

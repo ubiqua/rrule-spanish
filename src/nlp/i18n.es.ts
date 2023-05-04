@@ -10,7 +10,7 @@ const getText: GetText = (id) => {
   return id.toString()
 }
 
-const SPANISH: Language = {
+export const SPANISH: Language = {
   dayNames: [
     'domingos',
     'lunes',
@@ -133,5 +133,3 @@ const SPANISH: Language = {
   },
   getText: getText,
 }
-
-export default SPANISH

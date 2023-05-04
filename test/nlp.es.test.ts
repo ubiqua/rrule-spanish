@@ -3,7 +3,7 @@ import { RRule } from '../src'
 import { optionsToString } from '../src/optionstostring'
 import { DateFormatter } from '../src/nlp/totext'
 import { datetime } from './lib/utils'
-import SPANISH from '../src/nlp/i18n.es'
+import { SPANISH } from '../src/nlp/i18n.es'
 
 const texts = [
   ['Cada día', 'RRULE:FREQ=DAILY'],

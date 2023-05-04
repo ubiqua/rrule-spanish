@@ -6,7 +6,7 @@ var getText = function (id) {
         return SPANISH.dictionary[id] || id.toString();
     return id.toString();
 };
-var SPANISH = {
+export var SPANISH = {
     dayNames: [
         'domingos',
         'lunes',
@@ -129,5 +129,4 @@ var SPANISH = {
     },
     getText: getText,
 };
-export default SPANISH;
 //# sourceMappingURL=i18n.es.js.map

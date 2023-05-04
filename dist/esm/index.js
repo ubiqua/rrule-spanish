@@ -19,4 +19,5 @@ export { rrulestr } from './rrulestr';
 export { Frequency } from './types';
 export { Weekday } from './weekday';
 export { datetime } from './dateutil';
+export { SPANISH } from './nlp/i18n.es';
 //# sourceMappingURL=index.js.map
