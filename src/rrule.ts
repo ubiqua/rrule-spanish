@@ -19,6 +19,7 @@ import { optionsToString } from './optionstostring'
 import { Cache, CacheKeys } from './cache'
 import { Weekday } from './weekday'
 import { iter } from './iter/index'
+import SPANISH from './nlp/i18n.es'
 
 // =============================================================================
 // RRule
@@ -57,6 +58,8 @@ export const DEFAULT_OPTIONS: Options = {
 }
 
 export const defaultKeys = Object.keys(DEFAULT_OPTIONS) as (keyof Options)[]
+
+export const SpanishLang: Language = SPANISH
 
 /**
  *

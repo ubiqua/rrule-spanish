@@ -17,6 +17,7 @@ export declare const Days: {
 };
 export declare const DEFAULT_OPTIONS: Options;
 export declare const defaultKeys: (keyof Options)[];
+export declare const SpanishLang: Language;
 /**
  *
  * @param {Options?} options - see <http://labix.org/python-dateutil/#head-cf004ee9a75592797e076752b2a889c10f445418>

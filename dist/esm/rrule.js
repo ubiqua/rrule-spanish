@@ -9,6 +9,7 @@ import { optionsToString } from './optionstostring';
 import { Cache } from './cache';
 import { Weekday } from './weekday';
 import { iter } from './iter/index';
+import SPANISH from './nlp/i18n.es';
 // =============================================================================
 // RRule
 // =============================================================================
@@ -43,6 +44,7 @@ export var DEFAULT_OPTIONS = {
     byeaster: null,
 };
 export var defaultKeys = Object.keys(DEFAULT_OPTIONS);
+export var SpanishLang = SPANISH;
 /**
  *
  * @param {Options?} options - see <http://labix.org/python-dateutil/#head-cf004ee9a75592797e076752b2a889c10f445418>
