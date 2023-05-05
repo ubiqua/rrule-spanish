@@ -11,8 +11,8 @@ const texts = [
   ['Cada semana', 'RRULE:FREQ=WEEKLY'],
   ['Cada hora', 'RRULE:FREQ=HOURLY'],
   ['Cada 4 horas', 'RRULE:INTERVAL=4;FREQ=HOURLY'],
-  ['Cada semana el martes', 'RRULE:FREQ=WEEKLY;BYDAY=TU'],
-  ['Cada semana el lunes, miércoles', 'RRULE:FREQ=WEEKLY;BYDAY=MO,WE'],
+  ['Cada semana los martes', 'RRULE:FREQ=WEEKLY;BYDAY=TU'],
+  ['Cada semana los lunes, miércoles', 'RRULE:FREQ=WEEKLY;BYDAY=MO,WE'],
   ['Cada día de semana', 'RRULE:FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR'],
   ['Cada 2 semanas', 'RRULE:INTERVAL=2;FREQ=WEEKLY'],
   ['Cada mes', 'RRULE:FREQ=MONTHLY'],
@@ -69,7 +69,7 @@ describe('NLP - es la', () => {
       byweekday: 0,
     })
 
-    expect(rrule.toText(SPANISH)).to.equal('cada semana el lunes')
+    expect(rrule.toText(SPANISH)).to.equal('cada semana los lunes')
     expect(rrule.toString()).to.equal('RRULE:FREQ=WEEKLY;BYDAY=MO')
   })
 
@@ -105,7 +105,7 @@ describe('NLP - es la', () => {
     }
     const rule = new RRule(options)
     expect(rule.toText(SPANISH)).to.equal(
-      'cada semana el lunes, miércoles, viernes'
+      'cada semana los lunes, miércoles, viernes'
     )
   })
 
@@ -140,7 +140,7 @@ describe('NLP - es la', () => {
       byweekday: [RRule.MO, RRule.TU],
     }
     const rule = new RRule(options)
-    expect(rule.toText(SPANISH)).to.equal('cada semana el lunes, martes')
+    expect(rule.toText(SPANISH)).to.equal('cada semana los lunes, martes')
   })
 
   it("by default formats 'until' correctly", () => {

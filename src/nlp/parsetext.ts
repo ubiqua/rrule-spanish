@@ -308,7 +308,8 @@ export default function parseText(text: string, language: Language = ENGLISH) {
 
   function AT() {
     const at = ttr.accept('at')
-    if (!at) return
+    const on = ttr.accept('on')
+    if (!(at || on)) return
 
     do {
       let n = ttr.acceptNumber()
