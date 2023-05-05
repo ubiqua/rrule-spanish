@@ -292,7 +292,7 @@ var ToText = /** @class */ (function () {
     ToText.prototype._byweekday = function () {
         var gettext = this.getText;
         if (this.byweekday.allWeeks && !this.byweekday.isWeekdays) {
-            this.add(gettext('on')).add(this.list(this.byweekday.allWeeks, this.weekdaytext));
+            this.add(gettext('on')).add(this.addLastAnd(this.list(this.byweekday.allWeeks, this.weekdaytext)));
         }
         if (this.byweekday.someWeeks) {
             if (this.byweekday.allWeeks)
@@ -385,8 +385,11 @@ var ToText = /** @class */ (function () {
             return arr.map(realCallback).join(delim + ' ');
         }
     };
-    ToText.prototype.replaceLastComma = function (s) {
-        s = s.replace(/,([^,]*)$/, this.getText('and') + ' $1');
+    ToText.prototype.addLastAnd = function (s) {
+        var and = this.getText('and');
+        if (s.includes(" ".concat(and, " ")))
+            return s;
+        s = s.replace(/,([^,]*)$/, ' ' + and + '$1');
         return s;
     };
     return ToText;

@@ -56,6 +56,6 @@ export default class ToText {
     plural(n: number): boolean;
     add(s: string): this;
     list(arr: ByWeekday | ByWeekday[], callback?: GetText, finalDelim?: string, delim?: string): string;
-    replaceLastComma(s: string): string;
+    addLastAnd(s: string): string;
 }
 //# sourceMappingURL=totext.d.ts.map

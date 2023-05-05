@@ -377,7 +377,7 @@ export default class ToText {
     const gettext = this.getText
     if (this.byweekday.allWeeks && !this.byweekday.isWeekdays) {
       this.add(gettext('on')).add(
-        this.list(this.byweekday.allWeeks, this.weekdaytext)
+        this.addLastAnd(this.list(this.byweekday.allWeeks, this.weekdaytext))
       )
     }
 
@@ -501,8 +501,10 @@ export default class ToText {
     }
   }
 
-  replaceLastComma(s: string) {
-    s = s.replace(/,([^,]*)$/, this.getText('and') + ' $1')
+  addLastAnd(s: string) {
+    const and = this.getText('and')
+    if (s.includes(` ${and} `)) return s
+    s = s.replace(/,([^,]*)$/, ' ' + and + '$1')
     return s
   }
 }

@@ -12,7 +12,7 @@ const texts = [
   ['Cada hora', 'RRULE:FREQ=HOURLY'],
   ['Cada 4 horas', 'RRULE:INTERVAL=4;FREQ=HOURLY'],
   ['Cada semana los martes', 'RRULE:FREQ=WEEKLY;BYDAY=TU'],
-  ['Cada semana los lunes, miércoles', 'RRULE:FREQ=WEEKLY;BYDAY=MO,WE'],
+  ['Cada semana los lunes y miércoles', 'RRULE:FREQ=WEEKLY;BYDAY=MO,WE'],
   ['Cada día de semana', 'RRULE:FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR'],
   ['Cada 2 semanas', 'RRULE:INTERVAL=2;FREQ=WEEKLY'],
   ['Cada mes', 'RRULE:FREQ=MONTHLY'],
@@ -105,7 +105,7 @@ describe('NLP - es la', () => {
     }
     const rule = new RRule(options)
     expect(rule.toText(SPANISH)).to.equal(
-      'cada semana los lunes, miércoles, viernes'
+      'cada semana los lunes, miércoles y viernes'
     )
   })
 
@@ -140,7 +140,7 @@ describe('NLP - es la', () => {
       byweekday: [RRule.MO, RRule.TU],
     }
     const rule = new RRule(options)
-    expect(rule.toText(SPANISH)).to.equal('cada semana los lunes, martes')
+    expect(rule.toText(SPANISH)).to.equal('cada semana los lunes y martes')
   })
 
   it("by default formats 'until' correctly", () => {
