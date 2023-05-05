@@ -269,7 +269,8 @@ export default function parseText(text, language) {
     }
     function AT() {
         var at = ttr.accept('at');
-        if (!at)
+        var on = ttr.accept('on');
+        if (!(at || on))
             return;
         do {
             var n = ttr.acceptNumber();
