@@ -93,6 +93,24 @@ describe('NLP', () => {
     expect(rule.toText()).to.equal('every day')
   })
 
+  it('shows correct text for every x weeks, all days', () => {
+    const options = {
+      freq: RRule.WEEKLY,
+      interval: 2,
+      byweekday: [
+        RRule.MO,
+        RRule.TU,
+        RRule.WE,
+        RRule.TH,
+        RRule.FR,
+        RRule.SA,
+        RRule.SU,
+      ],
+    }
+    const rule = new RRule(options)
+    expect(rule.toText()).to.equal('every 2 weeks all days')
+  })
+
   it('shows correct text for every minute', () => {
     const options = { freq: RRule.MINUTELY }
     const rule = new RRule(options)

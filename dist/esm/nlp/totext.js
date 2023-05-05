@@ -191,7 +191,9 @@ var ToText = /** @class */ (function () {
             }
         }
         else if (this.byweekday && this.byweekday.isEveryDay) {
-            this.add(this.plural(this.options.interval) ? gettext('days') : gettext('day'));
+            this.add(this.plural(this.options.interval)
+                ? gettext('all days')
+                : gettext('day'));
         }
         else {
             if (this.options.interval === 1)

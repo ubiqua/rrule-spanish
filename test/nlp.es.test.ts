@@ -98,6 +98,36 @@ describe('NLP - es la', () => {
     expect(rule.toText(SPANISH)).to.equal('cada día')
   })
 
+  it('shows correct text for every x weeks, all days', () => {
+    const options = {
+      freq: RRule.WEEKLY,
+      interval: 2,
+      byweekday: [
+        RRule.MO,
+        RRule.TU,
+        RRule.WE,
+        RRule.TH,
+        RRule.FR,
+        RRule.SA,
+        RRule.SU,
+      ],
+    }
+    const rule = new RRule(options)
+    expect(rule.toText(SPANISH)).to.equal('cada 2 semanas todos los días')
+  })
+
+  it('shows correct text for every x weeks, some days', () => {
+    const options = {
+      freq: RRule.WEEKLY,
+      interval: 2,
+      byweekday: [RRule.MO, RRule.WE, RRule.TH, RRule.SA, RRule.SU],
+    }
+    const rule = new RRule(options)
+    expect(rule.toText(SPANISH)).to.equal(
+      'cada 2 semanas los lunes, miércoles, jueves, sábados y domingos'
+    )
+  })
+
   it('shows correct text for some days', () => {
     const options = {
       freq: RRule.WEEKLY,

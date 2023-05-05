@@ -30,6 +30,7 @@ var ENGLISH = {
         number: /^[1-9][0-9]*/,
         numberAsText: /^(one|two|three)/i,
         every: /^every/i,
+        'all days': /^all days/i,
         'day(s)': /^days?/i,
         'weekday(s)': /^weekdays?/i,
         'week(s)': /^weeks?/i,
