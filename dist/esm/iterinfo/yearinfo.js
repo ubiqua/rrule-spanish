@@ -125,4 +125,3 @@ function baseYearMasks(year) {
         mrange: M366RANGE,
     };
 }
-//# sourceMappingURL=yearinfo.js.map

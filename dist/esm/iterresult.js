@@ -85,4 +85,3 @@ var IterResult = /** @class */ (function () {
     return IterResult;
 }());
 export default IterResult;
-//# sourceMappingURL=iterresult.js.map

@@ -131,4 +131,3 @@ export var SPANISH = {
     },
     getText: getText,
 };
-//# sourceMappingURL=i18n.es.js.map

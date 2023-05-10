@@ -11,4 +11,3 @@ export var Frequency;
 export function freqIsDailyOrGreater(freq) {
     return freq < Frequency.HOURLY;
 }
-//# sourceMappingURL=types.js.map

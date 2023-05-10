@@ -39,4 +39,3 @@ export function buildPoslist(bysetpos, timeset, start, end, ii, dayset) {
     sort(poslist);
     return poslist;
 }
-//# sourceMappingURL=poslist.js.map

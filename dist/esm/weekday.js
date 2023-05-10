@@ -42,4 +42,3 @@ var Weekday = /** @class */ (function () {
     return Weekday;
 }());
 export { Weekday };
-//# sourceMappingURL=weekday.js.map

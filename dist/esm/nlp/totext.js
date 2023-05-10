@@ -397,4 +397,3 @@ var ToText = /** @class */ (function () {
     return ToText;
 }());
 export default ToText;
-//# sourceMappingURL=totext.js.map

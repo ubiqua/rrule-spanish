@@ -185,4 +185,3 @@ var Iterinfo = /** @class */ (function () {
     return Iterinfo;
 }());
 export default Iterinfo;
-//# sourceMappingURL=index.js.map

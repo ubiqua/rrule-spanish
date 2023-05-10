@@ -60,4 +60,3 @@ export function iterSet(iterResult, _rrule, _exrule, _rdate, _exdate, tzid) {
             return ((res.length && res[0]) || null);
     }
 }
-//# sourceMappingURL=iterset.js.map

@@ -115,4 +115,3 @@ export var notEmpty = function (obj) {
 export var includes = function (arr, val) {
     return notEmpty(arr) && arr.indexOf(val) !== -1;
 };
-//# sourceMappingURL=helpers.js.map

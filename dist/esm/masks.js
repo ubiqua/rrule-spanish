@@ -27,4 +27,3 @@ var WDAYMASK = (function () {
     return wdaymask;
 })();
 export { WDAYMASK, M365MASK, M365RANGE, M366MASK, M366RANGE, MDAY365MASK, MDAY366MASK, NMDAY365MASK, NMDAY366MASK, };
-//# sourceMappingURL=masks.js.map

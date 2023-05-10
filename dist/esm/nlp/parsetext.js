@@ -386,4 +386,3 @@ export default function parseText(text, language) {
         }
     }
 }
-//# sourceMappingURL=parsetext.js.map

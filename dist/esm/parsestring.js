@@ -125,4 +125,3 @@ function parseWeekday(value) {
         return new Weekday(wday, n);
     });
 }
-//# sourceMappingURL=parsestring.js.map

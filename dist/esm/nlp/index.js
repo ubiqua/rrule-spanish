@@ -119,4 +119,3 @@ var toText = function (rrule, language, dateFormatter) {
 };
 var isFullyConvertible = ToText.isFullyConvertible;
 export { fromText, parseText, isFullyConvertible, toText };
-//# sourceMappingURL=index.js.map

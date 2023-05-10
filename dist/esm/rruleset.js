@@ -179,4 +179,3 @@ function rdatesToString(param, rdates, tzid) {
         .join(',');
     return "".concat(header).concat(dateString);
 }
-//# sourceMappingURL=rruleset.js.map

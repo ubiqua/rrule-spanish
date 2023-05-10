@@ -198,4 +198,3 @@ export function buildTimeset(opts) {
     });
     return timeset;
 }
-//# sourceMappingURL=parseoptions.js.map

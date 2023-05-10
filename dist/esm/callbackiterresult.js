@@ -21,4 +21,3 @@ var CallbackIterResult = /** @class */ (function (_super) {
     return CallbackIterResult;
 }(IterResult));
 export default CallbackIterResult;
-//# sourceMappingURL=callbackiterresult.js.map

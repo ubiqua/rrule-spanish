@@ -135,4 +135,3 @@ function makeTimeset(ii, counterDate, options) {
     }
     return ii.gettimeset(freq)(counterDate.hour, counterDate.minute, counterDate.second, counterDate.millisecond);
 }
-//# sourceMappingURL=index.js.map

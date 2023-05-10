@@ -48,4 +48,3 @@ export function rebuildMonth(year, month, yearlen, mrange, wdaymask, options) {
     }
     return result;
 }
-//# sourceMappingURL=monthinfo.js.map

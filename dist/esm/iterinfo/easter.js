@@ -18,4 +18,3 @@ export function easter(y, offset) {
     var yearStart = Date.UTC(y, 0, 1);
     return [Math.ceil((date - yearStart) / (1000 * 60 * 60 * 24))];
 }
-//# sourceMappingURL=easter.js.map

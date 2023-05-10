@@ -72,4 +72,3 @@ var ENGLISH = {
     },
 };
 export default ENGLISH;
-//# sourceMappingURL=i18n.js.map

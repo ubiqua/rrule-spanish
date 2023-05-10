@@ -158,4 +158,3 @@ export var dateInTimeZone = function (date, timeZone) {
     var tzOffset = dateInTargetTZ.getTime() - dateInLocalTZ.getTime();
     return new Date(date.getTime() - tzOffset);
 };
-//# sourceMappingURL=dateutil.js.map
